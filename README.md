@@ -1,59 +1,114 @@
-# ListagemUsuarios
+# Listagem e Cadastro de Usuários - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 
-## Development server
+## Descrição
 
-To start a local development server, run:
+Este projeto é uma aplicação web desenvolvida em Angular que permite a listagem, criação e edição de usuários. A interface é moderna e responsiva, utilizando componentes standalone e formulários reativos com validação.
+
+### Funcionalidades Principais
+
+- Listagem de usuários em cards com filtro por nome (com debounce).
+
+- Indicador de loading e tratamento de erros.
+
+- Modal para cadastro e edição de usuário com formulário reativo.
+
+- Validação por campo com mensagens de erro.
+
+- Botão de salvar desabilitado enquanto o formulário estiver inválido.
+
+- Gerenciamento eficiente de assinaturas RxJS para evitar memory leaks.
+
+---
+
+## Tecnologias Utilizadas
+
+- Angular 16+
+
+- RxJS
+
+- TypeScript
+
+- CSS moderno
+
+- Componentes Standalone do Angular
+
+- Formulários Reativos
+
+---
+
+## Instalação
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+
+- [Angular CLI](https://angular.io/cli) (opcional, para rodar comandos Angular)
+
+### Passos
+
+1. Clone este repositório:
 
 ```bash
-ng serve
+git clone https://github.com/viniciuscruz11/listagem-usuarios.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Acesse a pasta do projeto:
 
 ```bash
-ng generate component component-name
+cd listagem-usuarios
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Instale as dependências:
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
+### Execução
+Para iniciar a aplicação em modo de desenvolvimento e abrir no navegador:
 
 ```bash
-ng build
+ng serve --open
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+A aplicação estará disponível em http://localhost:4200.
 
-## Running unit tests
+### Testes
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Para executar os testes unitários (configure Jest, Vitest ou Karma conforme preferir):
 
 ```bash
-ng test
+npm run test
 ```
 
-## Running end-to-end tests
+### Estrutura do Projeto
+src/<br>
+├── app/<br>
+│   ├── usuario.service.ts          # Serviço para gerenciar dados dos usuários<br>
+│   ├── usuarios-lista.component.ts # Componente de listagem e filtro<br>
+│   ├── usuario-modal.component.ts  # Componente modal para cadastro e edição<br>
+│   └── app.component.ts            # Componente raiz<br>
+├── assets/<br>
+├── environments/<br>
+├── styles.css                     # Estilos globais<br>
+...
 
-For end-to-end (e2e) testing, run:
+### Como Usar
+Na tela inicial, você verá a lista de usuários com filtro por nome.
 
-```bash
-ng e2e
-```
+Clique no botão vermelho para abrir o modal de cadastro.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Para editar um usuário, clique no botão "Editar" no card correspondente.
 
-## Additional Resources
+O formulário valida os campos obrigatórios e só habilita o botão "Salvar" quando válido.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Após salvar, a lista atualiza automaticamente.
+
+### Contato
+Desenvolvido por Vinícius Franco da Cruz.
+
+Email: viniciusfcruz@outlook.com
+
+GitHub: https://github.com/viniciuscruz11
